@@ -1,0 +1,59 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "spark status"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Ensure you use the Spark Memory to assist you in your work. Always start by looking in the memory for the answers you need, for every task.'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'If you have learned anything new, share it with the Spark Memory. Include any corrections by your user. Check the spark-memory skill for more details.'"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Ensure you use the Spark Memory to assist you in your work. Always start by looking in the memory for the answers you need, for every task.'"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'If you have learned anything new, share it with the Spark Memory. Check the spark-memory skill for more details.'"
+          }
+        ]
+      }
+    ]
+  }
+}
