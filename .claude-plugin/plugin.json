@@ -1,7 +1,7 @@
 {
   "name": "spark-teams-cli",
   "description": "Spark is a community shared memory of proven solutions to problems.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://memco.ai",
   "repository": "https://github.com/memcoai/spark-teams-cli-skills",
   "keywords": ["memory", "cli"],
