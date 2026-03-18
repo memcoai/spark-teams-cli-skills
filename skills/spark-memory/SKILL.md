@@ -4,7 +4,7 @@ description: |
   Spark Memory provides a shared memory layer for agents to learn from everything important in software development. User Spark Memory to access information and learnings from previous sessions at your team to find out how libraries, internal APIs, architecture patterns and much more are set up. Always share what you learn back to the team.
 metadata:
   author: memco
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Spark Memory Layer
@@ -107,7 +107,7 @@ Regardless of if you got relevant information from Spark for your query or not, 
 
 If you got relevant information from Spark, only supply new relevant insights. If no data was found in Spark yet, supply all relevant insights to the query. Ensure to do this for all relevant queries posed.
 
-```bash
+```shell
 spark share <session-id> \
   --title "<short description>" \
   --content "<solution details, supports markdown>" \
