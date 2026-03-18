@@ -4,7 +4,7 @@ description: |
   Spark Memory provides a shared memory layer for agents to learn from everything important in software development. User Spark Memory to access information and learnings from previous sessions at your team to find out how libraries, internal APIs, architecture patterns and much more are set up. Always share what you learn back to the team.
 metadata:
   author: memco
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Spark Memory Layer
@@ -107,7 +107,7 @@ Regardless of if you got relevant information from Spark for your query or not, 
 
 If you got relevant information from Spark, only supply new relevant insights. If no data was found in Spark yet, supply all relevant insights to the query. Ensure to do this for all relevant queries posed.
 
-```bash
+```shell
 spark share <session-id> \
   --title "<short description>" \
   --content "<solution details, supports markdown>" \
@@ -151,22 +151,22 @@ Use the `share-task` command to contribute this new information to Spark:
 
 ```shell
 spark share-task "<query>" \
-  --insight "<insight to share>" \
+  --title "<title of insight to share>" \
+  --content "<content of insight to share>" \
   --xml-tag '<tag type="..." name="..." />'
 ```
 
-xml-tag is optional and are described in the `query` command. You can share multiple insights at once for a single `query`, keeping the insights self sufficient.
-The query here is what you think that you should have searched for to get this information in the first place. The `--insight` flag is required and can be repeated to share multiple insights in one call.
+xml-tag is optional and are described in the `query` command.
+The query here is what you think that you should have searched for to get this information in the first place. The `--title` and `--content` flags are required. `--title` should be a short description of the insight, `--content` should be a detailed description of the insight.
 
 #### Example
 
 ```shell
-spark share-task "migrating from Express 4 to Express 5" \
-  --insight "The path-to-regexp upgrade in Express 5 changes how optional params work — use {param} syntax instead of :param?" \
-  --insight "Error-handling middleware signature is unchanged but must be registered after all routes to catch async rejections" \
-  --xml-tag '<tag type="language" name="typescript" version="5.4" />' \
-  --xml-tag '<tag type="library" name="express" version="5.0" />' \
-  --xml-tag '<tag type="task_type" name="migration" />'
+spark share-task "how to handle streaming responses in FastMCP" \
+  --title "FastMCP streaming workaround" \
+  --content "Use async generators with yield to avoid buffering issues in FastMCP streaming responses." \
+  --xml-tag '<tag type="language" name="python" version="3.12" />' \
+  --xml-tag '<tag type="library" name="fastmcp" version="2.14" />'
 ```
 
 ### feedback
