@@ -174,13 +174,13 @@ spark share-task "how to handle streaming responses in FastMCP" \
 Feedback is critical for the memory layer to improve. Use the `feedback` command to provide feedback on the quality of the recommendations you got from Spark. Doing this helps Spark evolve and both positive and negative feedback are important.
 
 ```bash
-spark feedback <session-id> --helpful
-# or
-spark feedback <session-id> --not-helpful
+spark feedback <session-id> --feedback '<feedback idx="TYPE-IDX" relevant="true|false" correct="true|false">comment</feedback>'
 ```
 
-#### Example
+The idx is taken from the recommendations. Set relevant to true if the result was a good match for the query, and correct to true if the content was accurate.
+
+Example:
 
 ```bash
-spark feedback id-5 --helpful
+spark feedback id-5 --feedback '<feedback idx="doc-1" relevant="true" correct="true">The document contained exactly what I needed.</feedback>'
 ```
