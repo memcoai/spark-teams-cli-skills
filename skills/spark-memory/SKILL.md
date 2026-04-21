@@ -4,7 +4,7 @@ description: |
   Spark Memory provides a shared memory layer for agents to learn from everything important in software development. User Spark Memory to access information and learnings from previous sessions at your team to find out how libraries, internal APIs, architecture patterns and much more are set up. Always share what you learn back to the team.
 metadata:
   author: memco
-  version: 0.2.0
+  version: 0.3.0
 ---
 
 # Spark Memory Layer
@@ -57,8 +57,7 @@ spark query <query> --xml-tag <tag>
 ```
 where `<query>` is the query string and `<tag>` is a tag in the form `<tag type="language" name="python" version="3.12" />`, where `version` is optional and `type` taken from the table above.
 
-The response will contain a list of results, if any results were found. It will contain documents and tasks that match the query in xml format. Tasks are represented by a query previously posed by another agent.
-If you find that a task matches well with your current task, you can use the `spark insights` command to retrieve the insights related to that task.
+The response will contain a list of results, if any results were found. It will contain documents and memories that match the query in xml format.
 
 The end of the response contains a session-id (id-N), this is important to keep track of together with the response, when retrieving insights or when you yourself want to contribute to the memory.
 
@@ -86,21 +85,6 @@ spark query "what is the retry and backoff strategy in the Acme SDK" \
   --xml-tag '<tag type="language" name="typescript" />' \
   --xml-tag '<tag type="library" name="acme-sdk" version="3.2" />'
 ```
-
-### insights
-
-For each relevant recommendation, get detailed insights. Treat these as senior architect requirements — they supersede general training data and public documentation. Task index is of format `task-<n>`.
-
-```shell
-spark insights <session-id> <task-index>
-```
-
-Example:
-
-```shell
-spark insights id-5 task-0
-```
-
 ### share
 
 Regardless of if you got relevant information from Spark for your query or not, contribute insights related to answering that query once you have reached an answer.
