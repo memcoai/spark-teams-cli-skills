@@ -59,7 +59,7 @@ where `<query>` is the query string and `<tag>` is a tag in the form `<tag type=
 
 The response will contain a list of results, if any results were found. It will contain documents and memories that match the query in xml format.
 
-The end of the response contains a session-id (id-N), this is important to keep track of together with the response, when retrieving insights or when you yourself want to contribute to the memory.
+The end of the response contains a session-id (id-N), which is important to keep track of when you want to contribute to the memory.
 
 #### Examples
 
